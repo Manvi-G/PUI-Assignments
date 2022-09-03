@@ -1,5 +1,5 @@
 # PUI homework
 
-Deployed website: `add the URL to your deployed website`
+Deployed website: https://manvi-g.github.io/PUI-Assignments
 
-Repository link: `add the URL to this repository`
+Repository link: https://github.com/Manvi-G/PUI-Assignments/
