@@ -1,11 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
-  <title>Page Title</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>Bun Bun bake shop</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/nav-header.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/main.css" type="text/css"/>
+  </head>
   
   <body>
+    <!-- Contains the header element with logo and navigation section -->
+    <div class="nav-header">
+      <img src="../assets/HW1/logo.svg" alt="Bun Bun bake shop logo"/>
+      <nav class="nav-options">
+        <div class="options">
+          <a href="#" class="products">PRODUCTS</a>
+          <a href="#" class="cart" onclick="onCartClick()">CART</a>
+          <div id="modalContainer" class="modal-container">
+            <span>Added to cart: </span><br>
+            <br>
+          </div>
+          <br>
+          <span class="total-items"></span>
+          <br>
+          <span class="total-cost"></span>
+        </div>
+        <hr>
+        <div class="heading">Our hand-made cinnamon rolls</div>
+      </nav>
+    </div>
 
-    <h1>I am the solution to HW2!</h1>
+    <!-- Contains the main text / body for the content -->
+    <main class="rolls-container">
+      <!-- Each div contains one block of each roll -->
+      <div class="single-roll-container">
+        <img src="../assets/HW1/products/original-cinnamon-roll.jpg" alt="Original Cinnamon Roll"/>
+        <span class="roll-name bold">Original cinnamon roll</span>
 
+        <section class="glazing-container">
+          <label for="glazing-original-cinnamon-roll" class="input-label">Glazing:</label>
+          <select
+            id="glazing-original-cinnamon-roll"
+            name="glazing-original-cinnamon-roll"
+            class="right-content glazing original"
+            onchange="onOptionsChange('original')"
+          >
+            <!-- options generated automatically using JS function addDropdownOptions -->
+          </select>
+        </section>
+
+        <section class="pack-size-container">
+          <span class="input-label">Pack size:</span>
+          <span class="right-content pack-size">
+            <span>
+              <input type="radio" id="original-cinnamon-roll-1" name="original" value="1" onchange="onOptionsChange('original')" checked>
+              <label for="original-cinnamon-roll-1">1</label>
+            </span>
+
+            <span>
+              <input type="radio" id="original-cinnamon-roll-3" name="original" onchange="onOptionsChange('original')" value="3">
+              <label for="original-cinnamon-roll-3">3</label>
+            </span>
+
+            <span>
+              <input type="radio" id="original-cinnamon-roll-6" name="original" onchange="onOptionsChange('original')" value="5">
+              <label for="original-cinnamon-roll-6">6</label>
+            </span>
+
+            <span>
+              <input type="radio" id="original-cinnamon-roll-12" name="original" onchange="onOptionsChange('original')" value="10">
+              <label for="original-cinnamon-roll-12">12</label>
+            </span>
+          </span>
+        </section>
+
+        <section class="price-container original">
+          <span class="bold"><span>$ </span><span class="price">2.49</span></span>
+          <button class="right-content add-to-cart bold" onclick="addToCart('original')">Add to Cart</button>
+        </section>
+      </div>
+
+      <div class="single-roll-container">
+        <img src="../assets/HW1/products/apple-cinnamon-roll.jpg" alt="Apple Cinnamon Roll"/>
+        <span class="roll-name bold">Apple cinnamon roll</span>
+
+        <section class="glazing-container">
+          <label for="glazing-apple-cinnamon-roll" class="input-label">Glazing:</label>
+          <select
+            id="glazing-apple-cinnamon-roll"
+            name="glazing-apple-cinnamon-roll"
+            class="right-content glazing apple"
+            onchange="onOptionsChange('apple')"
+          >
+            <!-- options generated automatically using JS function addDropdownOptions -->
+          </select>
+        </section>
+
+        <section class="pack-size-container">
+          <span class="input-label">Pack size:</span>
+          <span class="right-content pack-size">
+            <span>
+              <input type="radio" id="apple-cinnamon-roll-1" name="apple" onchange="onOptionsChange('apple')" value="1" checked>
+              <label for="apple-cinnamon-roll-1">1</label>
+            </span>
+
+            <span>
+              <input type="radio" id="apple-cinnamon-roll-3" name="apple" onchange="onOptionsChange('apple')" value="3">
+              <label for="apple-cinnamon-roll-3">3</label>
+            </span>
+
+            <span>
+              <input type="radio" id="apple-cinnamon-roll-6" name="apple" onchange="onOptionsChange('apple')" value="5">
+              <label for="apple-cinnamon-roll-6">6</label>
+            </span>
+
+            <span>
+              <input type="radio" id="apple-cinnamon-roll-12" name="apple" onchange="onOptionsChange('apple')" value="10">
+              <label for="apple-cinnamon-roll-12">12</label>
+            </span>
+          </span>
+        </section>
+
+        <section class="price-container apple">
+          <span class="bold"><span>$ </span><span class="price">3.49</span></span>
+          <button class="right-content add-to-cart bold" onclick="addToCart('apple')">Add to Cart</button>
+        </section>
+      </div>
+
+      <div class="single-roll-container">
+        <img src="../assets/HW1/products/raisin-cinnamon-roll.jpg" alt="Raisin Cinnamon Roll"/>
+        <span class="roll-name bold">Raisin cinnamon roll</span>
+
+        <section class="glazing-container">
+          <label for="glazing-raisin-cinnamon-roll" class="input-label">Glazing:</label>
+          <select
+            id="glazing-raisin-cinnamon-roll"
+            name="glazing-raisin-cinnamon-roll"
+            class="right-content glazing raisin"
+            onchange="onOptionsChange('raisin')"
+          >
+            <!-- options generated automatically using JS function addDropdownOptions -->
+          </select>
+        </section>
+
+        <section class="pack-size-container">
+          <span class="input-label">Pack size:</span>
+          <span class="right-content pack-size">
+            <span>
+              <input type="radio" id="raisin-cinnamon-roll-1" name="raisin" onchange="onOptionsChange('raisin')" value="1" checked>
+              <label for="raisin-cinnamon-roll-1">1</label>
+            </span>
+
+            <span>
+              <input type="radio" id="raisin-cinnamon-roll-3" name="raisin" onchange="onOptionsChange('raisin')" value="3">
+              <label for="raisin-cinnamon-roll-3">3</label>
+            </span>
+
+            <span>
+              <input type="radio" id="raisin-cinnamon-roll-6" name="raisin" onchange="onOptionsChange('raisin')" value="5">
+              <label for="raisin-cinnamon-roll-6">6</label>
+            </span>
+
+            <span>
+              <input type="radio" id="raisin-cinnamon-roll-12" name="raisin" onchange="onOptionsChange('raisin')" value="10">
+              <label for="raisin-cinnamon-roll-12">12</label>
+            </span>
+          </span>
+        </section>
+
+        <section class="price-container raisin">
+          <span class="bold"><span>$ </span><span class="price">2.99</span></span>
+          <button class="right-content add-to-cart bold" onclick="addToCart('raisin')">Add to Cart</button>
+        </section>
+      </div>
+
+      <div class="single-roll-container">
+        <img src="../assets/HW1/products/walnut-cinnamon-roll.jpg" alt="Walnut Cinnamon Roll"/>
+        <span class="roll-name bold">Walnut cinnamon roll</span>
+
+        <section class="glazing-container">
+          <label for="glazing-walnut-cinnamon-roll" class="input-label">Glazing:</label>
+          <select
+            id="glazing-walnut-cinnamon-roll"
+            name="glazing-walnut-cinnamon-roll"
+            class="right-content glazing walnut"
+            onchange="onOptionsChange('walnut')"
+          >
+            <!-- options generated automatically using JS function addDropdownOptions -->
+          </select>
+        </section>
+
+        <section class="pack-size-container">
+          <span class="input-label">Pack size:</span>
+          <span class="right-content pack-size">
+            <span>
+              <input type="radio" id="walnut-cinnamon-roll-1" name="walnut" onchange="onOptionsChange('walnut')" value="1" checked>
+              <label for="walnut-cinnamon-roll-1">1</label>
+            </span>
+
+            <span>
+              <input type="radio" id="walnut-cinnamon-roll-3" name="walnut" onchange="onOptionsChange('walnut')" value="3">
+              <label for="walnut-cinnamon-roll-3">3</label>
+            </span>
+
+            <span>
+              <input type="radio" id="walnut-cinnamon-roll-6" name="walnut" onchange="onOptionsChange('walnut')" value="5">
+              <label for="walnut-cinnamon-roll-6">6</label>
+            </span>
+
+            <span>
+              <input type="radio" id="walnut-cinnamon-roll-12" name="walnut" onchange="onOptionsChange('walnut')" value="10">
+              <label for="walnut-cinnamon-roll-12">12</label>
+            </span>
+          </span>
+        </section>
+
+        <section class="price-container walnut">
+          <span class="bold"><span>$ </span><span class="price">3.49</span></span>
+          <button class="right-content add-to-cart bold" onclick="addToCart('walnut')">Add to Cart</button>
+        </section>
+      </div>
+
+      <div class="single-roll-container">
+        <img src="../assets/HW1/products/double-chocolate-cinnamon-roll.jpg" alt="Double-chocolate Cinnamon Roll"/>
+        <span class="roll-name bold">Double-chocolate cinnamon roll</span>
+
+        <section class="glazing-container">
+          <label for="glazing-double-chocolate-cinnamon-roll" class="input-label">Glazing:</label>
+          <select
+            id="glazing-double-chocolate-cinnamon-roll"
+            name="glazing-double-chocolate-cinnamon-roll"
+            class="right-content glazing doubleChocolate"
+            onchange="onOptionsChange('doubleChocolate')"
+          >
+            <!-- options generated automatically using JS function addDropdownOptions -->
+          </select>
+        </section>
+
+        <section class="pack-size-container">
+          <span class="input-label">Pack size:</span>
+          <span class="right-content pack-size">
+            <span>
+              <input type="radio" id="double-chocolate-cinnamon-roll-1" name="doubleChocolate" onchange="onOptionsChange('doubleChocolate')" value="1" checked>
+              <label for="double-chocolate-cinnamon-roll-1">1</label>
+            </span>
+
+            <span>
+              <input type="radio" id="double-chocolate-cinnamon-roll-3" name="doubleChocolate" onchange="onOptionsChange('doubleChocolate')" value="3">
+              <label for="double-chocolate-cinnamon-roll-3">3</label>
+            </span>
+
+            <span>
+              <input type="radio" id="double-chocolate-cinnamon-roll-6" name="doubleChocolate" onchange="onOptionsChange('doubleChocolate')" value="5">
+              <label for="double-chocolate-cinnamon-roll-6">6</label>
+            </span>
+
+            <span>
+              <input type="radio" id="double-chocolate-cinnamon-roll-12" name="doubleChocolate" onchange="onOptionsChange('doubleChocolate')" value="10">
+              <label for="double-chocolate-cinnamon-roll-12">12</label>
+            </span>
+          </span>
+        </section>
+
+        <section class="price-container doubleChocolate">
+          <span class="bold"><span>$ </span><span class="price">3.99</span></span>
+          <button class="right-content add-to-cart bold" onclick="addToCart('doubleChocolate')">Add to Cart</button>
+        </section>
+      </div>
+
+      <div class="single-roll-container">
+        <img src="../assets/HW1/products/strawberry-cinnamon-roll.jpg" alt="Strawberry Cinnamon Roll"/>
+        <span class="roll-name bold">Strawberry cinnamon roll</span>
+
+        <section class="glazing-container">
+          <label for="glazing-strawberry-cinnamon-roll" class="input-label">Glazing:</label>
+          <select
+            id="glazing-strawberry-cinnamon-roll"
+            name="glazing-strawberry-cinnamon-roll"
+            class="right-content glazing strawberry"
+            onchange="onOptionsChange('strawberry')"
+          >
+            <!-- options generated automatically using JS function addDropdownOptions -->
+          </select>
+        </section>
+
+        <section class="pack-size-container">
+          <span class="input-label">Pack size:</span>
+          <span class="right-content pack-size">
+            <span>
+              <input type="radio" id="strawberry-cinnamon-roll-1" name="strawberry" onchange="onOptionsChange('strawberry')" value="1" checked>
+              <label for="strawberry-cinnamon-roll-1">1</label>
+            </span>
+
+            <span>
+              <input type="radio" id="strawberry-cinnamon-roll-3" name="strawberry" onchange="onOptionsChange('strawberry')" value="3">
+              <label for="strawberry-cinnamon-roll-3">3</label>
+            </span>
+
+            <span>
+              <input type="radio" id="strawberry-cinnamon-roll-6" name="strawberry" onchange="onOptionsChange('strawberry')" value="5">
+              <label for="strawberry-cinnamon-roll-6">6</label>
+            </span>
+
+            <span>
+              <input type="radio" id="strawberry-cinnamon-roll-12" name="strawberry" onchange="onOptionsChange('strawberry')" value="10">
+              <label for="strawberry-cinnamon-roll-12">12</label>
+            </span>
+          </span>
+        </section>
+
+        <section class="price-container strawberry">
+          <span class="bold"><span>$ </span><span class="price">3.99</span></span>
+          <button class="right-content add-to-cart bold" onclick="addToCart('strawberry')">Add to Cart</button>
+        </section>
+      </div>
+
+      <div class="single-roll-container">
+        <img src="../assets/HW1/products/gluten-free-cinnamon-roll.jpg" alt="Gluten-free Cinnamon Roll"/>
+        <span class="roll-name bold">Gluten-free cinnamon roll</span>
+
+        <section class="glazing-container">
+          <label for="glazing-gluten-free-cinnamon-roll" class="input-label">Glazing:</label>
+          <select
+            id="glazing-gluten-free-cinnamon-roll"
+            name="glazing-gluten-free-cinnamon-roll"
+            class="right-content glazing glutenFree"
+            onchange="onOptionsChange('glutenFree')"
+          >
+            <!-- options generated automatically using JS function addDropdownOptions -->
+          </select>
+        </section>
+
+        <section class="pack-size-container">
+          <span class="input-label">Pack size:</span>
+          <span class="right-content pack-size">
+            <span>
+              <input type="radio" id="gluten-free-cinnamon-roll-1" name="glutenFree" onchange="onOptionsChange('glutenFree')" value="1" checked>
+              <label for="gluten-free-cinnamon-roll-1">1</label>
+            </span>
+
+            <span>
+              <input type="radio" id="gluten-free-cinnamon-roll-3" name="glutenFree" onchange="onOptionsChange('glutenFree')" value="3">
+              <label for="gluten-free-cinnamon-roll-3">3</label>
+            </span>
+
+            <span>
+              <input type="radio" id="gluten-free-cinnamon-roll-6" name="glutenFree" onchange="onOptionsChange('glutenFree')" value="5">
+              <label for="gluten-free-cinnamon-roll-6">6</label>
+            </span>
+
+            <span>
+              <input type="radio" id="gluten-free-cinnamon-roll-12" name="glutenFree" onchange="onOptionsChange('glutenFree')" value="10">
+              <label for="gluten-free-cinnamon-roll-12">12</label>
+            </span>
+          </span>
+        </section>
+
+        <section class="price-container glutenFree">
+          <span class="bold"><span>$ </span><span class="price">4.09</span></span>
+          <button class="right-content add-to-cart bold" onclick="addToCart('glutenFree')">Add to Cart</button>
+        </section>
+      </div>
+
+      <div class="single-roll-container">
+        <img src="../assets/HW1/products/vanilla-cinnamon-roll.jpg" alt="Vanilla Cinnamon Roll"/>
+        <span class="roll-name bold">Vanilla cinnamon roll</span>
+
+        <section class="glazing-container">
+          <label for="glazing-vanilla-cinnamon-roll" class="input-label">Glazing:</label>
+          <select
+            id="glazing-vanilla-cinnamon-roll"
+            name="glazing-vanilla-cinnamon-roll"
+            class="right-content glazing vanilla"
+            onchange="onOptionsChange('vanilla')"
+          >
+            <!-- options generated automatically using JS function addDropdownOptions -->
+          </select>
+        </section>
+
+        <section class="pack-size-container">
+          <span class="input-label">Pack size:</span>
+          <span class="right-content pack-size">
+            <span>
+              <input type="radio" id="vanilla-cinnamon-roll-1" name="vanilla" onchange="onOptionsChange('vanilla')" value="1" checked>
+              <label for="vanilla-cinnamon-roll-1">1</label>
+            </span>
+
+            <span>
+              <input type="radio" id="vanilla-cinnamon-roll-3" name="vanilla" onchange="onOptionsChange('vanilla')" value="3">
+              <label for="vanilla-cinnamon-roll-3">3</label>
+            </span>
+
+            <span>
+              <input type="radio" id="vanilla-cinnamon-roll-6" name="vanilla" onchange="onOptionsChange('vanilla')" value="5">
+              <label for="vanilla-cinnamon-roll-6">6</label>
+            </span>
+
+            <span>
+              <input type="radio" id="vanilla-cinnamon-roll-12" name="vanilla" onchange="onOptionsChange('vanilla')" value="10">
+              <label for="vanilla-cinnamon-roll-12">12</label>
+            </span>
+          </span>
+        </section>
+
+        <section class="price-container vanilla">
+          <span class="bold"><span>$ </span><span class="price">3.49</span></span>
+          <button class="right-content add-to-cart bold" onclick="addToCart('vanilla')">Add to Cart</button>
+        </section>
+      </div>
+    </main>
+
+    <script src="js/functions.js" type="text/javascript"></script>
   </body>
 </html>
