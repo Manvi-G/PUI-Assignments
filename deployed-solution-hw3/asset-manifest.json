@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/PUI-Assignments/solution-hw3/deployed-solution-hw3/static/css/main.073c9b0a.css",
+    "main.js": "/PUI-Assignments/solution-hw3/deployed-solution-hw3/static/js/main.b93ff711.js",
+    "static/js/787.e7d93d16.chunk.js": "/PUI-Assignments/solution-hw3/deployed-solution-hw3/static/js/787.e7d93d16.chunk.js",
+    "static/media/logo.svg": "/PUI-Assignments/solution-hw3/deployed-solution-hw3/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/PUI-Assignments/solution-hw3/deployed-solution-hw3/index.html",
+    "main.073c9b0a.css.map": "/PUI-Assignments/solution-hw3/deployed-solution-hw3/static/css/main.073c9b0a.css.map",
+    "main.b93ff711.js.map": "/PUI-Assignments/solution-hw3/deployed-solution-hw3/static/js/main.b93ff711.js.map",
+    "787.e7d93d16.chunk.js.map": "/PUI-Assignments/solution-hw3/deployed-solution-hw3/static/js/787.e7d93d16.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b93ff711.js"
+  ]
+}
