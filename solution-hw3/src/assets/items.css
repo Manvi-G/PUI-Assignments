@@ -48,6 +48,8 @@
 
 .single-roll-container .right-content.pack-size {
   border: none;
+  display: flex;
+  justify-content: space-between;
 }
 
 .single-roll-container .right-content.pack-size span {
@@ -63,7 +65,7 @@
 
 .single-roll-container .right-content input[type=radio] {
   border: 1.5px solid black;
-  padding: 21px;
+  padding: 19.3px;
   margin: 0;
   appearance: none; 
 }
