@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 /* Renders each individual item i.e. one block of roll - image, text, packsize, glazing and price */
 const Item = ({name, attrName, price, img}) => {
   return (
@@ -46,10 +48,17 @@ const Item = ({name, attrName, price, img}) => {
 
       <section className="price-container">
         <span className="bold">{price}</span>
-        <button className="right-content add-to-cart bold">Add to Cart</button>
+        <button className="right-content add-to-cart bold" type="button">Add to Cart</button>
       </section>
     </div>
   );
+}
+
+Item.propTypes = {
+  name: PropTypes.string.isRequired,
+  attrName: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 }
 
 export default Item;
