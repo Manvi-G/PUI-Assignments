@@ -1,8 +1,7 @@
 import '../../assets/common.css';
 import '../../assets/main.css';
-import '../../assets/nav-header.css';
+import NavBar from './NavBar';
 
-import logo from '../../assets/imgs/logo.svg';
 import originalCinnamonRoll from '../../assets/imgs/original-cinnamon-roll.jpg';
 import appleCinnamonRoll from '../../assets/imgs/apple-cinnamon-roll.jpg';
 import raisinCinnamonRoll from '../../assets/imgs/raisin-cinnamon-roll.jpg';
@@ -14,19 +13,8 @@ import vanillaCinnamonRoll from '../../assets/imgs/vanilla-cinnamon-roll.jpg';
 
 function HomePage() {
   return (
-    <div className="App">
-      {/* Contains the header element with logo and navigation section */}
-      <div className="nav-header">
-        <img src={logo}  alt="Bun Bun bake shop logo"/>
-        <nav className="nav-options">
-          <div className="options">
-            <a href="#" className="products">PRODUCTS</a>
-            <a href="#" className="cart">CART</a>
-          </div>
-          <hr />
-          <div className="heading">Our hand-made cinnamon rolls</div>
-        </nav>
-      </div>
+    <div>
+      <NavBar></NavBar>
 
       {/* Contains the main text / body for the content */}
       <main className="rolls-container">
