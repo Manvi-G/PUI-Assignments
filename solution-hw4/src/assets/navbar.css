@@ -1,0 +1,35 @@
+/* CSS for the Header */
+.nav-header {
+  display: flex;
+  align-items: center;
+}
+
+.nav-header img {
+  margin-right: 10px;
+  width: 400px;
+}
+
+.nav-options {
+  flex: 1 0 auto;
+  font-size: 22px;
+}
+
+.nav-options hr {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.nav-options .options {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.nav-options .options a {
+  text-decoration: none;
+  color: black;
+  margin-right: 70px;
+}
+
+.nav-options .heading {
+  margin-top: 45px;
+}
