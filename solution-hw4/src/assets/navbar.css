@@ -24,12 +24,62 @@
   margin-bottom: 40px;
 }
 
-.nav-options .options a {
-  text-decoration: none;
-  color: black;
+.nav-options .remove-margin {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.nav-options .options button {
   margin-right: 70px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  padding: 0;
+  cursor: pointer;
 }
 
 .nav-options .heading {
   margin-top: 45px;
+}
+
+/* CSS for the Cart Items - displayed always below the cart header */
+.cart-details-container {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.total-items, .total-cost {
+  margin-right: 70px;
+}
+
+/* CSS for the Modal displayed on click of the Cart button */
+.cart-modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  right: 0;
+  background-color: white;
+  margin-right: 45px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid black;
+  width: 200px;
+}
+
+.modal-head {
+  padding-bottom: 18px;
+}
+
+.modal-content {
+  background-color: white;
+}
+
+.individual-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 10px;
 }
