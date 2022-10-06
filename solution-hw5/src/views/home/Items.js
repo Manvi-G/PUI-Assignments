@@ -11,6 +11,7 @@ class Items extends React.Component {
     this.state = {
       ...props,
       filteredRolls: this.props.rolls, // Filtered Rolls based on search text - start with all rolls
+      filterCategory: 'Name', // the sort category - Name selected by default
     }
   }
 
@@ -19,12 +20,35 @@ class Items extends React.Component {
     // constant variable containing all the individual divs of rolls
     const allRollElements = [];
 
-    // Looping through the filteredRolls array to create similar Items with different attributes (individual divs) and adding it to our constant
+    // Sort the list on the basis of the sort category
+    if (this.state.filterCategory === 'Name') { // string sorting
+      this.state.filteredRolls.sort((roll1,roll2) => {
+        const firstRollName = roll1.type.toLowerCase(); // ignore upper and lowercase
+        const secondRollName = roll2.type.toLowerCase(); // ignore upper and lowercase
+
+        if (firstRollName < secondRollName) {
+          return -1;
+        }
+
+        if (firstRollName > secondRollName) {
+          return 1;
+        }
+
+        return 0; // if the names are equal
+      });
+    }
+    else if (this.state.filterCategory === 'BasePrice') { // floating point number sorting
+      this.state.filteredRolls.sort((roll1,roll2) => roll1.price - roll2.price);  
+    }
+
+    // Looping through the filtered (and sorted) rolls array to create similar Items with different attributes (individual divs) and adding it to our constant
     this.state.filteredRolls.forEach((roll, index) => {
-      allRollElements.push(<Roll key={index} {...roll} addRollToCart={(params) => this.props.addItemsToCart(params)}></Roll>);
+      allRollElements.push(<Roll key={roll.type} {...roll} addRollToCart={(params) => this.props.addItemsToCart(params)}></Roll>);
     });
 
-    // TODO: Add No match! if there is no match
+    if (allRollElements.length === 0) {
+      allRollElements.push(<div> No Match! </div>);
+    }
 
     return allRollElements;
   }
@@ -37,6 +61,12 @@ class Items extends React.Component {
 
     this.setState({
       filteredRolls,
+    });
+  }
+
+  filterCategoryHandler = (event) => {
+    this.setState({
+      filterCategory: event.target.value,
     });
   }
 
@@ -56,10 +86,10 @@ class Items extends React.Component {
           <select
             id="sort-by-box"
             className="sortBy-dropdown"
-            onChange=""
+            onChange={this.filterCategoryHandler}
           >
             <option value="Name">Name</option>
-            <option value="Base Price">Base Price</option>
+            <option value="BasePrice">Base Price</option>
           </select>
         </div>
 
