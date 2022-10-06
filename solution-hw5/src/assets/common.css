@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  margin: 30px 0 30px 30px;
+  width: 1170px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.single-roll-container .right-content.add-to-cart:hover,
+.nav-options .options .products:hover {
+  background-color: yellow;
+  cursor: pointer;
+  font-weight: 600;
+}
