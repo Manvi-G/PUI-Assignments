@@ -18,6 +18,7 @@ class Roll extends React.Component {
       price: props.price,
       glazing: 'Keep original', // default selection is Keep original
       packSize: 1, // default selection is 1
+      img: props.img,
     };
 
     // Price Adaption object for glazing dropdown options
@@ -75,7 +76,7 @@ class Roll extends React.Component {
     return (
       /* Renders each individual item i.e. one block of roll - image, text, packsize, glazing and price */
       <div className="single-roll-container">
-        <img src={this.props.img} alt={this.state.type}/>
+        <img src={this.state.img} alt={this.state.type}/>
         <span className="roll-name bold">{this.state.type}</span>
 
         {/* Dropdown to display the glazing options */}

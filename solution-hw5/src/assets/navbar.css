@@ -1,3 +1,7 @@
+.nav-container {
+  margin-bottom: 40px;
+}
+
 /* CSS for the Header */
 .nav-header {
   display: flex;
@@ -52,33 +56,4 @@
 
 .total-items, .total-cost {
   margin-right: 70px;
-}
-
-/* CSS for the Modal displayed on click of the Cart button */
-.cart-modal {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  right: 0;
-  background-color: white;
-  margin-right: 45px;
-  padding: 8px 24px 8px 8px;
-  font-size: 14px;
-  border: 1px solid black;
-}
-
-.modal-head {
-  padding-bottom: 18px;
-}
-
-.modal-content {
-  background-color: white;
-}
-
-.individual-item-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-bottom: 10px;
 }

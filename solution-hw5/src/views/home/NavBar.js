@@ -3,7 +3,7 @@ import React from 'react';
 import '../../assets/navbar.css';
 import logo from '../../assets/imgs/logo.svg';
 
-import CartModal from './CartModal';
+import CartItems from './CartItems';
 
 // Class to display the header section = logo, navigation items and cart details
 class NavBar extends React.Component {
@@ -46,39 +46,37 @@ class NavBar extends React.Component {
     this.setState({
       displayCart: true,
     });
-
-    // Hide the modal after 3 seconds
-    setTimeout(() => {
-      this.setState({
-        displayCart: false,
-      });
-    }, 3000);
   }
 
   /* Contains the header element with logo and navigation section */
   render() {
     return (
-      <div className="nav-header">
-        <img src={logo}  alt="Bun Bun bake shop logo"/>
-        <nav className="nav-options">
-          <div className={this.displayCartItems() ? 'remove-margin options' : 'options'}>
-            <button className="products">PRODUCTS</button>
-            <button className="cart" onClick={() => this.handleCartModalDisplay()}>CART</button>
-            <CartModal {...this.state}/>
-          </div>
-          {/* Displaying the cart items as a separate div section ONLY if there is atleast one roll added to cart */}
-          {
-            this.displayCartItems()
-            &&
-            <div id="cartDetailsContainer" className="cart-details-container">
-              <span className="total-items">{this.getTotalNumberOfItems()}</span> 
-              <span className="total-cost">{this.getTotalPriceOnCart()}</span>
-            </div> 
-          }
-          <hr />
-          <div className="heading">Our hand-made cinnamon rolls</div>
-        </nav>
+      <div className={this.state.displayCart ? "": "nav-container"}>
+        <div className="nav-header">
+          <img src={logo}  alt="Bun Bun bake shop logo"/>
+          <nav className="nav-options">
+            <div className={this.displayCartItems() ? 'remove-margin options' : 'options'}>
+              <button className="products">PRODUCTS</button>
+              <button className="cart" onClick={() => this.handleCartModalDisplay()}>CART</button>
+              {/* Commenting the hw4 code below - adding a separate section with hw5 */}
+              {/* <CartModal {...this.state}/> */}
+            </div>
+            {/* Displaying the cart items as a separate div section ONLY if there is atleast one roll added to cart */}
+            {
+              this.displayCartItems() &&
+              !this.state.displayCart &&
+              <div id="cartDetailsContainer" className="cart-details-container">
+                <span className="total-items">{this.getTotalNumberOfItems()}</span> 
+                <span className="total-cost">{this.getTotalPriceOnCart()}</span>
+              </div> 
+            }
+            <hr />
+            <div className="heading">Our hand-made cinnamon rolls</div>
+          </nav>
+        </div>
+        <CartItems {...this.state}></CartItems>
       </div>
+
     )
   }
 

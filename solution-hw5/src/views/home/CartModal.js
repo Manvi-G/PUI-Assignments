@@ -1,4 +1,5 @@
 import React from "react";
+import '../../assets/cartModal.css';
 
 const CartModal = props => {
   // Display the modal based on the "show/hide" property - show is true when the add to cart button is clicked and becomes false after 3 seconds
