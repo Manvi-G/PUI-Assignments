@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/PUI-Assignments/deployed-solution-hw4/static/css/main.bb7c1a5e.css",
+    "main.js": "/PUI-Assignments/deployed-solution-hw4/static/js/main.19866d0b.js",
+    "static/js/787.4cb1c4ce.chunk.js": "/PUI-Assignments/deployed-solution-hw4/static/js/787.4cb1c4ce.chunk.js",
+    "static/media/apple-cinnamon-roll.jpg": "/PUI-Assignments/deployed-solution-hw4/static/media/apple-cinnamon-roll.49f60af85b0e955dad15.jpg",
+    "static/media/double-chocolate-cinnamon-roll.jpg": "/PUI-Assignments/deployed-solution-hw4/static/media/double-chocolate-cinnamon-roll.dc7182fd330f44e75603.jpg",
+    "static/media/vanilla-cinnamon-roll.jpg": "/PUI-Assignments/deployed-solution-hw4/static/media/vanilla-cinnamon-roll.95f2ec04e192d67f0344.jpg",
+    "static/media/gluten-free-cinnamon-roll.jpg": "/PUI-Assignments/deployed-solution-hw4/static/media/gluten-free-cinnamon-roll.7bfc03b5375f1d7f5c4c.jpg",
+    "static/media/strawberry-cinnamon-roll.jpg": "/PUI-Assignments/deployed-solution-hw4/static/media/strawberry-cinnamon-roll.d77fc3751f757be76044.jpg",
+    "static/media/raisin-cinnamon-roll.jpg": "/PUI-Assignments/deployed-solution-hw4/static/media/raisin-cinnamon-roll.1beae169057e675aca32.jpg",
+    "static/media/original-cinnamon-roll.jpg": "/PUI-Assignments/deployed-solution-hw4/static/media/original-cinnamon-roll.cc1ea842c5d980a0fa60.jpg",
+    "static/media/logo.svg": "/PUI-Assignments/deployed-solution-hw4/static/media/logo.b2f9cdda6d5cda1ce2ffc47e6b747dd4.svg",
+    "static/media/walnut-cinnamon-roll.jpg": "/PUI-Assignments/deployed-solution-hw4/static/media/walnut-cinnamon-roll.e51000e24310a638db27.jpg",
+    "index.html": "/PUI-Assignments/deployed-solution-hw4/index.html",
+    "main.bb7c1a5e.css.map": "/PUI-Assignments/deployed-solution-hw4/static/css/main.bb7c1a5e.css.map",
+    "main.19866d0b.js.map": "/PUI-Assignments/deployed-solution-hw4/static/js/main.19866d0b.js.map",
+    "787.4cb1c4ce.chunk.js.map": "/PUI-Assignments/deployed-solution-hw4/static/js/787.4cb1c4ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb7c1a5e.css",
+    "static/js/main.19866d0b.js"
+  ]
+}
