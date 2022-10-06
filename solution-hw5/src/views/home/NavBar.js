@@ -42,9 +42,9 @@ class NavBar extends React.Component {
   }
 
   // Function to handle the display of the cart modal on click of Cart button
-  handleCartModalDisplay() {
+  handleCartDisplay() {
     this.setState({
-      displayCart: true,
+      displayCart: !this.state.displayCart,
     });
   }
 
@@ -57,7 +57,7 @@ class NavBar extends React.Component {
           <nav className="nav-options">
             <div className={this.displayCartItems() ? 'remove-margin options' : 'options'}>
               <button className="products">PRODUCTS</button>
-              <button className="cart" onClick={() => this.handleCartModalDisplay()}>CART</button>
+              <button className="cart" onClick={() => this.handleCartDisplay()}>CART</button>
               {/* Commenting the hw4 code below - adding a separate section with hw5 */}
               {/* <CartModal {...this.state}/> */}
             </div>

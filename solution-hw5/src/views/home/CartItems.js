@@ -1,51 +1,56 @@
 import React from "react";
 import '../../assets/cartItems.css';
 
-const CartItems = (props) => {
-  // Display the cart-section based on the "show/hide" property - show is true when the add to cart button is clicked and becomes false after 3 seconds
-  if (!props.displayCart) {
-    return null;
-  }
+class CartItems extends React.Component {
+  constructor(props) {
+    super(props);
 
-  // Do not display the modal if no items are added to the cart
-  if (!props.cartItems.length) {
-    return (
-      <div className="cart-container">
-        The cart is empty!
-      </div>
-    )
+    this.state = {
+      ...props,
+      cartElements: this.props.cartItems, // all the cart-items
+    }
   }
-
 
   // Function to return string with total price of all items on the cart
-  function calculateTotalPrice() {
+  calculateTotalPrice() {
     let totalPrice = 0;
 
-    props.cartItems.forEach((item) => {
+    this.props.cartItems.forEach((item) => {
       totalPrice += Number(item.currentPrice);
     });
 
     return `Total: $ ${totalPrice.toFixed(2)}`;
   }
 
-  function displayCartItems() {
+  // Function to remove item from cart on button click
+  removeItemFromCart = (index) => {
+    // removing the deletec item from the array based on the index on the array
+    this.state.cartItems.splice(index, 1);
+
+    // updating the state to reflect on DOM and update other calculations
+    this.setState({
+      cartElements: this.state.cartItems,
+    });
+  }
+
+  // Function to append all cart items as div and return all divs to be displayed on DOM
+  displayCartItems() {
     // Constant containing all the individual divs of rolls
     const allCartElements = [];
 
     // Looping through the cart items array to add each cart item to our constant and display it in UI together
-    props.cartItems.forEach((item, index) => {
+    this.state.cartElements.forEach((item, index) => {
       allCartElements.push(
         /* Renders each individual item i.e. one block of roll - image, text, packsize, glazing and price */
-        <div key={item.type} className="single-cart-item">
+        <div key={`${item.type}-${item.glazing}-${item.packSize}`} className="single-cart-item">
           <img src={item.img} alt={item.type}/>
           <span>{item.type}</span>
           <span>Glazing: {item.glazing}</span>
           <span>Pack Size: {item.packSize}</span>
-          <span className="bold">$ {item.price}</span>
+          <span className="bold">$ {item.currentPrice}</span>
           <button
-            className="remove-button-from-cart"
             type="button"
-            onClick=""
+            onClick={() => this.removeItemFromCart(index)}
           >
             Remove
           </button>
@@ -56,17 +61,33 @@ const CartItems = (props) => {
     return allCartElements;
   }
 
-  return (
-    <div className="cart-container">
-      <div className="cart-header">
-        <span>Shopping Cart ({props.cartItems.length} {props.cartItems.length > 1 ? 'Items': 'Item'})</span>
-        <span>{calculateTotalPrice()}</span>
+  render() {
+    // Do not display the section if no items are added to the cart
+    if (!this.props.displayCart) {
+      return null;
+    }
+
+    // Do not display the section if no items are added to the cart
+    if (!this.props.cartItems.length) {
+      return (
+        <div className="cart-container">
+          The cart is empty!
+        </div>
+      )
+    }
+
+    return (
+      <div className="cart-container">
+        <div className="cart-header">
+          <span>Shopping Cart ({this.props.cartItems.length} {this.props.cartItems.length > 1 ? 'Items': 'Item'})</span>
+          <span>{this.calculateTotalPrice()}</span>
+        </div>
+        <div className="cart-items">
+          {this.displayCartItems()}
+        </div>
       </div>
-      <div className="cart-items">
-        {displayCartItems()}
-      </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default CartItems;
