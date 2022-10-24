@@ -1,0 +1,59 @@
+.nav-container {
+  margin-bottom: 40px;
+}
+
+/* CSS for the Header */
+.nav-header {
+  display: flex;
+  align-items: center;
+}
+
+.nav-header img {
+  margin-right: 10px;
+  width: 400px;
+}
+
+.nav-options {
+  flex: 1 0 auto;
+  font-size: 22px;
+}
+
+.nav-options hr {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.nav-options .options {
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.nav-options .remove-margin {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.nav-options .options button {
+  margin-right: 70px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav-options .heading {
+  margin-top: 45px;
+}
+
+/* CSS for the Cart Items - displayed always below the cart header */
+.cart-details-container {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.total-items, .total-cost {
+  margin-right: 70px;
+}
