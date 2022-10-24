@@ -7,8 +7,12 @@ class CartItems extends React.Component {
 
     this.state = {
       ...props,
-      cartElements: this.props.cartItems, // all the cart-items
     }
+  }
+
+  // Stores and deletes a cart item’s JSON from local Storage when it is added or deleted from the shopping cart.
+  componentDidUpdate() {
+    localStorage.setItem("cartItems", JSON.stringify(this.state.cartItems));
   }
 
   // Function to return string with total price of all items on the cart
@@ -29,8 +33,13 @@ class CartItems extends React.Component {
 
     // updating the state to reflect on DOM and update other calculations
     this.setState({
-      cartElements: this.state.cartItems,
+      cartItems: this.state.cartItems,
     });
+
+    localStorage.setItem("cartItems", JSON.stringify(this.state.cartItems));
+
+    // Printing localStorage as per instructions
+    console.log(JSON.parse(localStorage.getItem("cartItems")));
   }
 
   // Function to append all cart items as div and return all divs to be displayed on DOM
@@ -39,7 +48,7 @@ class CartItems extends React.Component {
     const allCartElements = [];
 
     // Looping through the cart items array to add each cart item to our constant and display it in UI together
-    this.state.cartElements.forEach((item, index) => {
+    this.state.cartItems.forEach((item, index) => {
       allCartElements.push(
         /* Renders each individual item i.e. one block of roll - image, text, packsize, glazing and price */
         <div key={`${item.type}-${item.glazing}-${item.packSize}`} className="single-cart-item">

@@ -70,8 +70,8 @@ class HomePage extends React.Component {
         },
       ],
   
-      // Items added to cart - empty at launch
-      cartItems: [],
+      // Items in the cart (saved in local storage) - empty at beginning; Retrieves the cart item’s JSON from localStorage on refresh
+      cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
     };
   }
 
@@ -82,6 +82,11 @@ class HomePage extends React.Component {
     this.setState({
       cartItems: this.state.cartItems,
     });
+
+    localStorage.setItem("cartItems", JSON.stringify(this.state.cartItems));
+
+    // Printing localStorage as per instructions
+    console.log(JSON.parse(localStorage.getItem("cartItems")));
   }
 
   render() {
